@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                    Olá!!!!
+                    Esta é a página de isenção.
                 </div>
             </div>
         </div>

@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                    Olá!!!!
+                    Esta é a página de necessidades especiais.
                 </div>
             </div>
         </div>

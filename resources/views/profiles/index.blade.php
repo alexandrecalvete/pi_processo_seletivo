@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                    Olá!!!!
+                    Esta é a página do perfil.
                 </div>
             </div>
         </div>

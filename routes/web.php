@@ -18,3 +18,12 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::resource('profile', 'ProfileController');
+Route::resource('address', 'AddressController');
+Route::resource('personWithSpecialNeed','PersonWithSpecialNeedController');
+Route::resource('specialNeeds','SpecialNeedsController');
+Route::resource('inscription','InscriptionController');
+Route::resource('exemption','ExemptionController');
+Route::resource('course','CourseController');
+Route::resource('quota','QuotaController');
+
