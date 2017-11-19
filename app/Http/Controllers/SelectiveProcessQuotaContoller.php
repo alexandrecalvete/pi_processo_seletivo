@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Address as Address;
+use App\Models\SelectiveProcessQuota as SelectiveProcessQuota;
 
-class AddressController extends Controller
+class SelectiveProcessQuotaController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -24,6 +24,6 @@ class AddressController extends Controller
      */
     public function index()
     {
-        return view('addresses/index');
+        return view('selectiveProcessesQuotas/index');
     }
 }

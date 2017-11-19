@@ -28,3 +28,4 @@ Route::resource('course','CourseController');
 Route::resource('quota','QuotaController');
 Route::resource('selectiveProcess','SelectiveProcessController');
 Route::resource('selectiveProcessCourse','SelectiveProcessCourseController');
+Route::resource('selectiveProcessQuota','SelectiveProcessQuotaController');
