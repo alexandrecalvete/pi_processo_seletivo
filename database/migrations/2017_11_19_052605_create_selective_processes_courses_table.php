@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateQuotasTable extends Migration
+class CreateSelectiveProcessesCoursesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateQuotasTable extends Migration
      */
     public function up()
     {
-        Schema::create('quotas', function (Blueprint $table) {
+        Schema::create('selective_processes_courses', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
         });
@@ -26,6 +26,6 @@ class CreateQuotasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('quotas');
+        Schema::dropIfExists('selective_processes_courses');
     }
 }

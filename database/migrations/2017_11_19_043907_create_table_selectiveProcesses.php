@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTablePersonWithSpecialNeeds extends Migration
+class CreateTableSelectiveProcesses extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,17 @@ class CreateTablePersonWithSpecialNeeds extends Migration
      */
     public function up()
     {
-        Schema::create('personwithSpecialNeeds', function (Blueprint $table) {
-            $table->integer('pessoa_id');
-            $table->integer('necessidadeEspeciais_id');
-            $table->tinyInteger('permanente');
-            $table->text('observacao');
+        Schema::create('selectiveProcesses', function (Blueprint $table) {
+            $table->increments('id');
+            $table->dateTime('DataInicio');
+            $table->dateTime('DataFinal');
+            $table->boolean('Ativo');
+            $table->string('Nome', 140);
+            $table->text('Descricao');
             $table->timestamps();
         });
     }
+    
 
     /**
      * Reverse the migrations.

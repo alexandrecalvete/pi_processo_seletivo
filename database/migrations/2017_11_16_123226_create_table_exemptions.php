@@ -13,7 +13,7 @@ class CreateTableExemptions extends Migration
      */
     public function up()
     {
-        Schema::create('person_with_special_needs', function (Blueprint $table) {
+        Schema::create('exemptions', function (Blueprint $table) {
             $table->integer('Inscricao_id');
             $table->text('Motivo');
             $table->boolean('Homologado');

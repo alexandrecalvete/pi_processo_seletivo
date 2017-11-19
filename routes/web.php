@@ -26,4 +26,5 @@ Route::resource('inscription','InscriptionController');
 Route::resource('exemption','ExemptionController');
 Route::resource('course','CourseController');
 Route::resource('quota','QuotaController');
-
+Route::resource('selectiveProcess','SelectiveProcessController');
+Route::resource('selectiveProcessCourse','SelectiveProcessCourseController');

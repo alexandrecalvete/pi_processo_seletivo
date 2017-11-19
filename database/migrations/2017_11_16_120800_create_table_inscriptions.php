@@ -13,7 +13,7 @@ class CreateTableInscriptions extends Migration
      */
     public function up()
     {
-        Schema::create('person_with_special_needs', function (Blueprint $table) {
+        Schema::create('inscriptions', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('ProcessoSeletivo_id');
             $table->date('DataPagamento');

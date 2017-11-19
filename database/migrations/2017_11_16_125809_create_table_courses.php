@@ -13,7 +13,7 @@ class CreateTableCourses extends Migration
      */
     public function up()
     {
-        Schema::create('person_with_special_needs', function (Blueprint $table) {
+        Schema::create('courses', function (Blueprint $table) {
             $table->increments('id');
             $table->string('Nome', 100);
             $table->timestamps();

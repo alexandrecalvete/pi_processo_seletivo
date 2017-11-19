@@ -13,7 +13,7 @@ class CreateTableQuotas extends Migration
      */
     public function up()
     {
-        Schema::create('person_with_special_needs', function (Blueprint $table) {
+        Schema::create('quotas', function (Blueprint $table) {
             $table->increments('id');
             $table->string('Nome', 100);
             $table->timestamps();
