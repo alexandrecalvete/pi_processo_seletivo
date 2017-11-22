@@ -13,13 +13,13 @@ class CreateTableSelectiveProcesses extends Migration
      */
     public function up()
     {
-        Schema::create('selectiveProcesses', function (Blueprint $table) {
+        Schema::create('selective_processes', function (Blueprint $table) {
             $table->increments('id');
-            $table->dateTime('DataInicio');
-            $table->dateTime('DataFinal');
-            $table->boolean('Ativo');
-            $table->string('Nome', 140);
-            $table->text('Descricao');
+            $table->dateTime('data_inicio');
+            $table->dateTime('data_final');
+            $table->boolean('ativo');
+            $table->string('nome', 140);
+            $table->text('descricao');
             $table->timestamps();
         });
     }

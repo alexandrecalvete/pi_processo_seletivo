@@ -13,7 +13,7 @@ class CreateTablePersonWithSpecialNeeds extends Migration
      */
     public function up()
     {
-        Schema::create('personwithSpecialNeeds', function (Blueprint $table) {
+        Schema::create('person_with_special_needs', function (Blueprint $table) {
             $table->integer('pessoa_id');
             $table->integer('necessidadeEspeciais_id');
             $table->tinyInteger('permanente');

@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\SelectiveProcessQuota as SelectiveProcessQuota;
+use App\Models\SelectiveProcessesQuota as SelectiveProcessesQuota;
 
-class SelectiveProcessQuotaController extends Controller
+class SelectiveProcessesQuotaController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -24,6 +24,7 @@ class SelectiveProcessQuotaController extends Controller
      */
     public function index()
     {
-        return view('selectiveProcessesQuotas/index');
+        $quotas = SelectiveProcessesQuota::all();
+        return view('selectiveProcessesQuotas/index')->with('quotas', $quotas);
     }
 }

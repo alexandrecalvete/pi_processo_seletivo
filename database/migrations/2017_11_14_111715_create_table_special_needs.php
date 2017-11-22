@@ -14,7 +14,7 @@ class CreateTableSpecialNeeds extends Migration
     public function up()
     {
         Schema::create('special_needs', function (Blueprint $table) {
-            $table->increments('id_necessidadesEspeciais');
+            $table->increments('id_necessidades_especiais');
             $table->string('descricao', 200);
             $table->timestamps();
         });

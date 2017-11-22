@@ -15,13 +15,13 @@ class CreateTableInscriptions extends Migration
     {
         Schema::create('inscriptions', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('ProcessoSeletivo_id');
-            $table->date('DataPagamento');
-            $table->boolean('Pago');
-            $table->integer('PrimeiraOpcao');
-            $table->dateTime('DataInscricao');
+            $table->integer('processo_seletivo_id');
+            $table->date('data_pagamento');
+            $table->boolean('pago');
+            $table->integer('primeira_opcao');
+            $table->dateTime('data_inscricao');
             $table->integer('usuario_id');
-            $table->integer('Cotas_id');
+            $table->integer('cotas_id');
             $table->timestamps();
         });
     }

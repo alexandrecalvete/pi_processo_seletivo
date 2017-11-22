@@ -15,10 +15,10 @@ class CreateTableSelectiveProcessesQuotas extends Migration
     {
          public function up()
     {
-        Schema::create('selectiveProcessesQuotas', function (Blueprint $table) {
-            $table->integer('ProcessoSeletivo_id');
-            $table->integer('Cotas_id');
-            $table->integer('Vagas');
+        Schema::create('selective_processes_quotas', function (Blueprint $table) {
+            $table->integer('processo_seletivo_id');
+            $table->integer('cotas_id');
+            $table->integer('vagas');
             $table->timestamps();
         });
     }

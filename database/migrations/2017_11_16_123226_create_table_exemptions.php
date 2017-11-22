@@ -14,9 +14,9 @@ class CreateTableExemptions extends Migration
     public function up()
     {
         Schema::create('exemptions', function (Blueprint $table) {
-            $table->integer('Inscricao_id');
-            $table->text('Motivo');
-            $table->boolean('Homologado');
+            $table->integer('inscricao_id');
+            $table->text('motivo');
+            $table->boolean('homologado');
             $table->timestamps();
         });
     }

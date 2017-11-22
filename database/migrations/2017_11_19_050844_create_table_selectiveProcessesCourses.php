@@ -13,10 +13,10 @@ class CreateTableSelectiveProcessesCourses extends Migration
      */
     public function up()
     {
-        Schema::create('selectiveProcessesCourses', function (Blueprint $table) {
-            $table->integer('ProcessoSeletivo_id');
-            $table->integer('Cursos_id');
-            $table->integer('Vagas');
+        Schema::create('selective_processes_courses', function (Blueprint $table) {
+            $table->integer('processo_seletivo_id');
+            $table->integer('cursos_id');
+            $table->integer('vagas');
             $table->timestamps();
         });
     }
