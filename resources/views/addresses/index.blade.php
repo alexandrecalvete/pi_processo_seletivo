@@ -14,7 +14,18 @@
                         </div>
                     @endif
 
-                    Esta é a página do endereço.
+                    <h2>Esta é a página do endereço da pessoa.</h2>
+                        
+                        <ol>Rua:</ol>
+                        <ol>Numero do endereço:</ol>
+                        <ol>Cep:</ol>
+                        <ol>Bairro:</ol>
+                        <ol>Complemento:</ol>
+                        <ol>Cidade:</ol>
+                        <ol>Tipo:</ol>
+                        <ol>Estado:</ol>
+                        <ol>País:</ol>
+                       
                 </div>
             </div>
         </div>

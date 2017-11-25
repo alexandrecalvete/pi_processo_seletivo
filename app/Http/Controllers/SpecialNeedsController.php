@@ -24,6 +24,7 @@ class SpecialNeedsController extends Controller
      */
     public function index()
     {
-        return view('specialNeeds/index');
+        $profile = SpecialNeeds::all();
+        return view('specialNeeds/index')->with('profiles', $profiles);
     }
 }

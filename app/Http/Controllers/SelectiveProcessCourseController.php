@@ -24,6 +24,7 @@ class SelectiveProcessCourseController extends Controller
      */
     public function index()
     {
-        return view('selectiveProcessesCourses/index');
+        $courses = SelectiveProcessesCourse::all();
+        return view('selectiveProcessesCourses/index')->with('courses', $courses);
     }
 }
