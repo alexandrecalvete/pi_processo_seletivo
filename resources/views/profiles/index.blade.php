@@ -16,20 +16,7 @@
 
                     <h2>Esta é a página do perfil da pessoa.</h2>
                         
-                        <ol>ID:</ol>
-                        <ol>Nome:</ol>
-                        <ol>Data de Nascimento:</ol>
-                        <ol>Rg:</ol>
-                        <ol>Cpf:</ol>
-                        <ol>Sexo:</ol>
-                        <ol>Nome da mãe:</ol>
-                        <ol>Nome do pai:</ol>
-                        <ol>Passaporte:</ol>
-                        <ol>Naturalidade</ol>
-                        <ol>Telefone:</ol>
-                        <ol>Celular:</ol>
-                        <ol>Escolaridade:</ol>
-                        <ol>Emissor do rg:</ol>
+                      
                 </div>
             </div>
         </div>

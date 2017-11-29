@@ -17,7 +17,16 @@
                                     <div class="form-group row">
                                         {!! Form::label('nome', 'Nome', ['class' => 'col-md-2 col-form-label']) !!}
                                         <div class="col-md-10">
-                                            {!! Form::text('nome', '', ['class' => 'form-control', 'placeholder' => 'Nome do Endereço']) !!}
+                                            {!! Form::text('nome', '', ['class' => 'form-control', 'placeholder' => 'Rua']) !!}
+                                            {!! Form::text('nome', '', ['class' => 'form-control', 'placeholder' => 'Numero']) !!}
+                                            {!! Form::text('nome', '', ['class' => 'form-control', 'placeholder' => 'Cep']) !!}
+                                            {!! Form::text('nome', '', ['class' => 'form-control', 'placeholder' => 'Bairro']) !!}
+                                            {!! Form::text('nome', '', ['class' => 'form-control', 'placeholder' => 'Complemento']) !!}
+                                            {!! Form::text('nome', '', ['class' => 'form-control', 'placeholder' => 'Tipo']) !!}
+                                            {!! Form::text('nome', '', ['class' => 'form-control', 'placeholder' => 'Cidade']) !!}
+                                            {!! Form::text('nome', '', ['class' => 'form-control', 'placeholder' => 'Estado']) !!}
+                                            {!! Form::text('nome', '', ['class' => 'form-control', 'placeholder' => 'Pais']) !!}
+          
                                         </div>
                                     </div>
                                     

@@ -16,8 +16,20 @@
                                 {!! Form::open(['route' => 'profile.store']) !!}
                                     <div class="form-group row">
                                         {!! Form::label('nome', 'Nome', ['class' => 'col-md-2 col-form-label']) !!}
+
                                         <div class="col-md-10">
-                                            {!! Form::text('nome', '', ['class' => 'form-control', 'placeholder' => 'Nome do Perfil']) !!}
+                                            {!! Form::text('nome', '', ['class' => 'form-control', 'placeholder' => 'Nome']) !!}
+                                            {!! Form::text('nome', '', ['class' => 'form-control', 'placeholder' => 'Data de Nascimento']) !!}
+                                            {!! Form::text('nome', '', ['class' => 'form-control', 'placeholder' => 'Rg']) !!}
+                                            {!! Form::text('nome', '', ['class' => 'form-control', 'placeholder' => 'Cpf']) !!}
+                                            {!! Form::text('nome', '', ['class' => 'form-control', 'placeholder' => 'Sexo']) !!}
+                                            {!! Form::text('nome', '', ['class' => 'form-control', 'placeholder' => 'Nome do Pai']) !!}
+                                            {!! Form::text('nome', '', ['class' => 'form-control', 'placeholder' => 'Nome da Mãe']) !!}
+                                            {!! Form::text('nome', '', ['class' => 'form-control', 'placeholder' => 'Passaporte']) !!}
+                                            {!! Form::text('nome', '', ['class' => 'form-control', 'placeholder' => 'Naturalidade']) !!}
+                                            {!! Form::text('nome', '', ['class' => 'form-control', 'placeholder' => 'Telefone']) !!}
+                                            {!! Form::text('nome', '', ['class' => 'form-control', 'placeholder' => 'Celular']) !!}
+                                            {!! Form::text('nome', '', ['class' => 'form-control', 'placeholder' => 'Emissor do rg']) !!}
                                         </div>
                                     </div>
                                     

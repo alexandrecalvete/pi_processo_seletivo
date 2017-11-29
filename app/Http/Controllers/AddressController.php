@@ -24,7 +24,7 @@ class AddressController extends Controller
      */
     public function index()
     {
-        $addresses = Addresses::all();
+        $addresses = Address::all();
         return view('addresses/index')->with('addresses', $addresses);
     }
 
@@ -54,7 +54,7 @@ class AddressController extends Controller
  
     public function update(Request $request, $id)
     {
-        $address = ::findOrFail($id);
+        $address = Address::findOrFail($id);
         $address->nome = $request->input('nome');
         if($address->save()) {
             return redirect()->route('addresses.index')->with('success_message', 'Endereço alterado com sucesso.');
@@ -64,7 +64,7 @@ class AddressController extends Controller
     }
     public function destroy($id)
     {
-        if (Address::destroy($id))
+        if (Address::destroy($id)){
             return redirect()->route('addresses.index')->with('success_message', 'Endereço deleto com sucesso.');
         } else {
             return redirect()->route('addresses.create')->with('error_message', 'Houve um erro ao deletar o endereço.');

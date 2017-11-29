@@ -25,50 +25,50 @@ class CourseController extends Controller
     public function index()
     {
         return view('courses/index');
-                $addresses = Addresses::all();
-        return view('addresses/index')->with('addresses', $addresses);
+                $courses = Course::all();
+        return view('courses/index')->with('course', $course);
     }
 
     public function create()
     {
-        return view('profiles/create');    
+        return view('courses/create');    
     }
 
     public function store(Request $request)
     {
 
-        $profile = new Profile;
-        $profile->nome = $request->input('nome');
+        $course = new Course;
+        $course->nome = $request->input('nome');
 
-        if($profile->save()) {
-          return redirect()->route('profiles.index')->with('success_message', 'Perfil cadastrado com sucesso.');
+        if($course->save()) {
+          return redirect()->route('courses.index')->with('success_message', 'Curso cadastrado com sucesso.');
         } else {
-          return redirect()->route('profiles.create')->with('error_message', 'Houve um erro ao cadastradar o perfil.');
+          return redirect()->route('courses.create')->with('error_message', 'Houve um erro ao cadastradar o curso.');
         }
    }
 
     public function edit(Request $request, $id)
     {
-        $profile = Profile::findOrFail($id);
-        return view('profiles/edit')->with('profile', $profile);
+        $course = Course::findOrFail($id);
+        return view('courses/edit')->with('course', $course);
     }
  
     public function update(Request $request, $id)
     {
-        $profile = ::findOrFail($id);
-        $profile->nome = $request->input('nome');
-        if($profile->save()) {
-            return redirect()->route('profiles.index')->with('success_message', 'Perfil alterado com sucesso.');
+        $course = Course::findOrFail($id);
+        $courses->nome = $request->input('nome');
+        if($course->save()) {
+            return redirect()->route('courses.index')->with('success_message', 'Curso alterado com sucesso.');
         } else {
-            return redirect()->route('profiles.edit', $id)->with('error_message', 'Houve um erro ao alterar o perfil.');
+            return redirect()->route('courses.edit', $id)->with('error_message', 'Houve um erro ao alterar o curso.');
         }
     }
     public function destroy($id)
     {
-        if (Profile::destroy($id))
-            return redirect()->route('profiles.index')->with('success_message', 'Perfil deleto com sucesso.');
+        if (Course::destroy($id)){
+            return redirect()->route('courses.index')->with('success_message', 'Curso deletado com sucesso.');
         } else {
-            return redirect()->route('profiles.create')->with('error_message', 'Houve um erro ao deletar o perfil.');
+            return redirect()->route('courses.create')->with('error_message', 'Houve um erro ao deletar o curso.');
         }
     }
 }

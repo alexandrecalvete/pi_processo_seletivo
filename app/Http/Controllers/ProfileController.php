@@ -25,7 +25,7 @@ class ProfileController extends Controller
     public function index()
     {
         
-        $profiles = Profiles::all();
+        $profiles = Profile::all();
         return view('profiles/index')->with('profiles', $profiles);
     }
 
@@ -55,7 +55,7 @@ class ProfileController extends Controller
  
     public function update(Request $request, $id)
     {
-        $profile = ::findOrFail($id);
+        $profile = Profile::findOrFail($id);
         $profile->nome = $request->input('nome');
         if($profile->save()) {
             return redirect()->route('profiles.index')->with('success_message', 'Perfil alterado com sucesso.');
@@ -65,7 +65,7 @@ class ProfileController extends Controller
     }
     public function destroy($id)
     {
-        if (Profile::destroy($id))
+        if (Profile::destroy($id)) {
             return redirect()->route('profiles.index')->with('success_message', 'Perfil deleto com sucesso.');
         } else {
             return redirect()->route('profiles.create')->with('error_message', 'Houve um erro ao deletar o perfil.');
