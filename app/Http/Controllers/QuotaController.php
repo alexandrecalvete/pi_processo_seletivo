@@ -24,51 +24,50 @@ class QuotaController extends Controller
      */
     public function index()
     {
-        return view('quotas/index');
-            $addresses = Addresses::all();
-        return view('addresses/index')->with('addresses', $addresses);
+        $quotas = Quotas::all();
+        return view('quotas/index')->with('quotas', $quotas);
     }
 
     public function create()
     {
-        return view('profiles/create');    
+        return view('quotas/create');    
     }
 
     public function store(Request $request)
     {
 
-        $profile = new Profile;
-        $profile->nome = $request->input('nome');
+        $quota = new Quota;
+        $quota->nome = $request->input('nome');
 
-        if($profile->save()) {
-          return redirect()->route('profiles.index')->with('success_message', 'Perfil cadastrado com sucesso.');
+        if($quota->save()) {
+          return redirect()->route('quotas.index')->with('success_message', 'Cota cadastrada com sucesso.');
         } else {
-          return redirect()->route('profiles.create')->with('error_message', 'Houve um erro ao cadastradar o perfil.');
+          return redirect()->route('quotas.create')->with('error_message', 'Houve um erro ao cadastradar a cota.');
         }
    }
 
     public function edit(Request $request, $id)
     {
-        $profile = Profile::findOrFail($id);
-        return view('profiles/edit')->with('profile', $profile);
+        $quota = Quota::findOrFail($id);
+        return view('quotas/edit')->with('quota', $quota);
     }
  
     public function update(Request $request, $id)
     {
-        $profile = ::findOrFail($id);
-        $profile->nome = $request->input('nome');
-        if($profile->save()) {
-            return redirect()->route('profiles.index')->with('success_message', 'Perfil alterado com sucesso.');
+        $quota = Quota::findOrFail($id);
+        $quota->nome = $request->input('nome');
+        if($quota->save()) {
+            return redirect()->route('quotas.index')->with('success_message', 'Cota alterada com sucesso.');
         } else {
-            return redirect()->route('profiles.edit', $id)->with('error_message', 'Houve um erro ao alterar o perfil.');
+            return redirect()->route('quotas.edit', $id)->with('error_message', 'Houve um erro ao alterar a cota.');
         }
     }
     public function destroy($id)
     {
-        if (Profile::destroy($id))
-            return redirect()->route('profiles.index')->with('success_message', 'Perfil deleto com sucesso.');
+        if (Quota::destroy($id)){
+            return redirect()->route('quotas.index')->with('success_message', 'Cota deletada com sucesso.');
         } else {
-            return redirect()->route('profiles.create')->with('error_message', 'Houve um erro ao deletar o perfil.');
+            return redirect()->route('quotas.create')->with('error_message', 'Houve um erro ao deletar a cota.');
         }
     }
 }

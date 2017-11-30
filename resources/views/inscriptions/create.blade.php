@@ -17,7 +17,11 @@
                                     <div class="form-group row">
                                         {!! Form::label('nome', 'Nome', ['class' => 'col-md-2 col-form-label']) !!}
                                         <div class="col-md-10">
-                                            {!! Form::text('nome', '', ['class' => 'form-control', 'placeholder' => 'Nome da Inscrição']) !!}
+                                            {!! Form::text('nome', '', ['class' => 'form-control', 'placeholder' => 'Data de pagamento']) !!}
+                                            {!! Form::text('nome', '', ['class' => 'form-control', 'placeholder' => 'Pago']) !!}
+                                            {!! Form::text('nome', '', ['class' => 'form-control', 'placeholder' => 'Primeira opção']) !!}
+                                            {!! Form::text('nome', '', ['class' => 'form-control', 'placeholder' => 'Data de inscrição']) !!}
+                                            {!! Form::text('nome', '', ['class' => 'form-control', 'placeholder' => 'Cotas']) !!}
                                         </div>
                                     </div>
                                     

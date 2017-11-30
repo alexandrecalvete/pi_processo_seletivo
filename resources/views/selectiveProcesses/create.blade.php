@@ -17,7 +17,11 @@
                                     <div class="form-group row">
                                         {!! Form::label('nome', 'Nome', ['class' => 'col-md-2 col-form-label']) !!}
                                         <div class="col-md-10">
-                                            {!! Form::text('nome', '', ['class' => 'form-control', 'placeholder' => 'Nome do Perfil']) !!}
+                                            {!! Form::text('nome', '', ['class' => 'form-control', 'placeholder' => 'Data inicio']) !!}
+                                            {!! Form::text('nome', '', ['class' => 'form-control', 'placeholder' => 'Data final']) !!}
+                                            {!! Form::text('nome', '', ['class' => 'form-control', 'placeholder' => 'Ativo']) !!}
+                                            {!! Form::text('nome', '', ['class' => 'form-control', 'placeholder' => 'Nome ']) !!}
+                                            {!! Form::text('nome', '', ['class' => 'form-control', 'placeholder' => 'Descrição']) !!}
                                         </div>
                                     </div>
                                     

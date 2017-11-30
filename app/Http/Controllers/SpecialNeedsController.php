@@ -24,52 +24,50 @@ class SpecialNeedsController extends Controller
      */
     public function index()
     {
-        $profile = SpecialNeeds::all();
-        return view('specialNeeds/index')->with('profiles', $profiles);
-            $addresses = Addresses::all();
-        return view('addresses/index')->with('addresses', $addresses);
+        $specialNeed = SpecialNeeds::all();
+        return view('specialNeeds/index')->with('specialNeeds', $specialNeeds);
     }
 
     public function create()
     {
-        return view('profiles/create');    
+        return view('specialNeeds/create');    
     }
 
     public function store(Request $request)
     {
 
-        $profile = new Profile;
-        $profile->nome = $request->input('nome');
+        $specialNeed = new Profile;
+        $specialNeed->nome = $request->input('nome');
 
-        if($profile->save()) {
-          return redirect()->route('profiles.index')->with('success_message', 'Perfil cadastrado com sucesso.');
+        if($specialNeeds->save()) {
+          return redirect()->route('specialNeeds.index')->with('success_message', 'Necessidade Especiais cadastrado com sucesso.');
         } else {
-          return redirect()->route('profiles.create')->with('error_message', 'Houve um erro ao cadastradar o perfil.');
+          return redirect()->route('specialNeeds.create')->with('error_message', 'Houve um erro ao cadastradar a necessidade especiais.');
         }
    }
 
     public function edit(Request $request, $id)
     {
-        $profile = Profile::findOrFail($id);
-        return view('profiles/edit')->with('profile', $profile);
+        $specialNeed = SpecialNeed::findOrFail($id);
+        return view('specialNeeds/edit')->with('specialNeed', $specialNeed);
     }
  
     public function update(Request $request, $id)
     {
-        $profile = ::findOrFail($id);
-        $profile->nome = $request->input('nome');
-        if($profile->save()) {
-            return redirect()->route('profiles.index')->with('success_message', 'Perfil alterado com sucesso.');
+        $specialNeed = SpecialNeed::findOrFail($id);
+        $specialNeed->nome = $request->input('nome');
+        if($specialNeed->save()) {
+            return redirect()->route('specialNeeds.index')->with('success_message', 'Necessidade Especiais alterada com sucesso.');
         } else {
-            return redirect()->route('profiles.edit', $id)->with('error_message', 'Houve um erro ao alterar o perfil.');
+            return redirect()->route('specialNeeds.edit', $id)->with('error_message', 'Houve um erro ao alterar a necessidade especiais.');
         }
     }
     public function destroy($id)
     {
-        if (Profile::destroy($id))
-            return redirect()->route('profiles.index')->with('success_message', 'Perfil deleto com sucesso.');
+        if (SpecialNeed::destroy($id)){
+            return redirect()->route('specialNeeds.index')->with('success_message', 'Necessidade Especiais deletada com sucesso.');
         } else {
-            return redirect()->route('profiles.create')->with('error_message', 'Houve um erro ao deletar o perfil.');
+            return redirect()->route('specialNeeds.create')->with('error_message', 'Houve um erro ao deletar a necessidade especiais.');
         }
     }
 }

@@ -24,51 +24,53 @@ class SelectiveProcessController extends Controller
      */
     public function index()
     {
-        return view('selectiveProcesses/index');
-            $addresses = Addresses::all();
-        return view('addresses/index')->with('addresses', $addresses);
+        
+        
+
+$selectiveProcesses = SelectiveProcesses::all();
+        return view('selectiveProcesses/index')->with('selectiveProcesses', $selectiveProcesses);
     }
 
     public function create()
     {
-        return view('profiles/create');    
+        return view('selectiveProcesses/create');    
     }
 
     public function store(Request $request)
     {
 
-        $profile = new Profile;
-        $profile->nome = $request->input('nome');
+        $selectiveProcess = new Profile;
+        $selectiveProcess->nome = $request->input('nome');
 
-        if($profile->save()) {
-          return redirect()->route('profiles.index')->with('success_message', 'Perfil cadastrado com sucesso.');
+        if($selectiveProcess->save()) {
+          return redirect()->route('selectiveProcesses.index')->with('success_message', 'Processo Seletivo cadastrado com sucesso.');
         } else {
-          return redirect()->route('profiles.create')->with('error_message', 'Houve um erro ao cadastradar o perfil.');
+          return redirect()->route('selectiveProcesses.create')->with('error_message', 'Houve um erro ao cadastradar o proceso seletivo.');
         }
    }
 
     public function edit(Request $request, $id)
     {
-        $profile = Profile::findOrFail($id);
-        return view('profiles/edit')->with('profile', $profile);
+        $selectiveProcess = SelectiveProcess::findOrFail($id);
+        return view('selectiveProcesses/edit')->with('selectiveProcess', $selectiveProcess);
     }
  
     public function update(Request $request, $id)
     {
-        $profile = ::findOrFail($id);
-        $profile->nome = $request->input('nome');
-        if($profile->save()) {
-            return redirect()->route('profiles.index')->with('success_message', 'Perfil alterado com sucesso.');
+        $selectiveProcess = SelectiveProcess::findOrFail($id);
+        $selectiveProcess->nome = $request->input('nome');
+        if($selectiveProcess->save()) {
+            return redirect()->route('selectiveProcesses.index')->with('success_message', 'Processo Seletivo alterado com sucesso.');
         } else {
-            return redirect()->route('profiles.edit', $id)->with('error_message', 'Houve um erro ao alterar o perfil.');
+            return redirect()->route('selectiveProcesses.edit', $id)->with('error_message', 'Houve um erro ao alterar o processo seletivo.');
         }
     }
     public function destroy($id)
     {
-        if (Profile::destroy($id))
-            return redirect()->route('profiles.index')->with('success_message', 'Perfil deleto com sucesso.');
+        if (SelectiveProcess::destroy($id)){
+            return redirect()->route('selectiveProcesses.index')->with('success_message', 'Processo Seletivo deletado com sucesso.');
         } else {
-            return redirect()->route('profiles.create')->with('error_message', 'Houve um erro ao deletar o perfil.');
+            return redirect()->route('selectiveProcesses.create')->with('error_message', 'Houve um erro ao deletar o processo seletivo.');
         }
     }
 }

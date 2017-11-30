@@ -24,51 +24,50 @@ class PersonWithSpecialNeedController extends Controller
      */
     public function index()
     {
-        return view('home');
-            $addresses = Addresses::all();
-        return view('addresses/index')->with('addresses', $addresses);
+        $personWithSpecialNeed = PersonWithSpecialNeed::all();
+        return view('personWithSpecialNeed/index')->with('personWithSpecialNeed', $personWithSpecialNeed);
     }
 
     public function create()
     {
-        return view('profiles/create');    
+        return view('personWithSpecialNeed/create');    
     }
 
     public function store(Request $request)
     {
 
-        $profile = new Profile;
-        $profile->nome = $request->input('nome');
+        $personWithSpecialNeed = new PersonWithSpecialNeed;
+        $personWithSpecialNeed->nome = $request->input('nome');
 
-        if($profile->save()) {
-          return redirect()->route('profiles.index')->with('success_message', 'Perfil cadastrado com sucesso.');
+        if($personWithSpecialNeed->save()) {
+          return redirect()->route('personWithSpecialNeed.index')->with('success_message', 'Pessoa com necessidade especiais cadastrado com sucesso.');
         } else {
-          return redirect()->route('profiles.create')->with('error_message', 'Houve um erro ao cadastradar o perfil.');
+          return redirect()->route('personWithSpecialNeed.create')->with('error_message', 'Houve um erro ao cadastradar a Pessoa com necessidade especiais.');
         }
    }
 
     public function edit(Request $request, $id)
     {
-        $profile = Profile::findOrFail($id);
-        return view('profiles/edit')->with('profile', $profile);
+        $personWithSpecialNeed = PersonWithSpecialNeed::findOrFail($id);
+        return view('personWithSpecialNeed/edit')->with('personWithSpecialNeed', $personWithSpecialNeed);
     }
  
     public function update(Request $request, $id)
     {
-        $profile = ::findOrFail($id);
-        $profile->nome = $request->input('nome');
-        if($profile->save()) {
-            return redirect()->route('profiles.index')->with('success_message', 'Perfil alterado com sucesso.');
+        $personWithSpecialNeed = PersonWithSpecialNeed::findOrFail($id);
+        $personWithSpecialNeed->nome = $request->input('nome');
+        if($personWithSpecialNeed->save()) {
+            return redirect()->route('personWithSpecialNeed.index')->with('success_message', 'Pessoa com necessidade especiais alterado com sucesso.');
         } else {
-            return redirect()->route('profiles.edit', $id)->with('error_message', 'Houve um erro ao alterar o perfil.');
+            return redirect()->route('personWithSpecialNeed.edit', $id)->with('error_message', 'Houve um erro ao alterar a Pessoa com necessidade especiais.');
         }
     }
     public function destroy($id)
     {
-        if (Profile::destroy($id))
-            return redirect()->route('profiles.index')->with('success_message', 'Perfil deleto com sucesso.');
+        if (PersonWithSpecialNeed::destroy($id))
+            return redirect()->route('personWithSpecialNeed.index')->with('success_message', 'Pessoa com necessidade especiais deletada com sucesso.');
         } else {
-            return redirect()->route('profiles.create')->with('error_message', 'Houve um erro ao deletar o perfil.');
+            return redirect()->route('personWithSpecialNeed.create')->with('error_message', 'Houve um erro ao deletar a Pessoa com necessidade especiais.');
         }
     }
 }

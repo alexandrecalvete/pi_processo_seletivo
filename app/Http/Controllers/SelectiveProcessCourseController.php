@@ -26,8 +26,6 @@ class SelectiveProcessCourseController extends Controller
     {
         $courses = SelectiveProcessesCourse::all();
         return view('selectiveProcessesCourses/index')->with('courses', $courses);
-            $addresses = Addresses::all();
-        return view('addresses/index')->with('addresses', $addresses);
     }
 
     public function create()
@@ -38,38 +36,38 @@ class SelectiveProcessCourseController extends Controller
     public function store(Request $request)
     {
 
-        $profile = new Profile;
-        $profile->nome = $request->input('nome');
+        $courses = new Courses;
+        $courses->nome = $request->input('nome');
 
-        if($profile->save()) {
-          return redirect()->route('profiles.index')->with('success_message', 'Perfil cadastrado com sucesso.');
+        if($courses->save()) {
+          return redirect()->route('selectiveProcessesCourses.index')->with('success_message', 'Processo seletivo cursos cadastrado com sucesso.');
         } else {
-          return redirect()->route('profiles.create')->with('error_message', 'Houve um erro ao cadastradar o perfil.');
+          return redirect()->route('selectiveProcessesCourses.create')->with('error_message', 'Houve um erro ao cadastradar o Processo seletivo cursos.');
         }
    }
 
     public function edit(Request $request, $id)
     {
-        $profile = Profile::findOrFail($id);
-        return view('profiles/edit')->with('profile', $profile);
+        $courses = Courses::findOrFail($id);
+        return view('selectiveProcessesCourses/edit')->with('profile', $profile);
     }
  
     public function update(Request $request, $id)
     {
-        $profile = ::findOrFail($id);
-        $profile->nome = $request->input('nome');
-        if($profile->save()) {
-            return redirect()->route('profiles.index')->with('success_message', 'Perfil alterado com sucesso.');
+        $courses = Courses::findOrFail($id);
+        $courses->nome = $request->input('nome');
+        if($courses->save()) {
+            return redirect()->route('selectiveProcessesCourses.index')->with('success_message', 'Processo seletivo cursos alterado com sucesso.');
         } else {
-            return redirect()->route('profiles.edit', $id)->with('error_message', 'Houve um erro ao alterar o perfil.');
+            return redirect()->route('selectiveProcessesCourses.edit', $id)->with('error_message', 'Houve um erro ao alterar o Processo seletivo cursos.');
         }
     }
     public function destroy($id)
     {
-        if (Profile::destroy($id))
-            return redirect()->route('profiles.index')->with('success_message', 'Perfil deleto com sucesso.');
+        if (Courses::destroy($id)){
+            return redirect()->route('selectiveProcessesCourses.index')->with('success_message', 'Processo seletivo cursos deletado com sucesso.');
         } else {
-            return redirect()->route('profiles.create')->with('error_message', 'Houve um erro ao deletar o perfil.');
+            return redirect()->route('selectiveProcessesCourses.create')->with('error_message', 'Houve um erro ao deletar o Processo seletivo cursos.');
         }
     }
 }
