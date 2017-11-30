@@ -14,17 +14,36 @@
                             <div class="content-section mt-20">
                                 
                                 {!! Form::open(['route' => 'exemption.store']) !!}
-                                    <div class="form-group row">
-                                        {!! Form::label('nome', 'Nome', ['class' => 'col-md-2 col-form-label']) !!}
+
+ <                                      div class="form-group row">
+                                        {!! Form::label('inscricao', 'Inscrição:', ['class' => 'col-md-2 col-form-label']) !!}
+                                        
                                         <div class="col-md-10">
-                                            {!! Form::text('nome', '', ['class' => 'form-control', 'placeholder' => 'Inscrição']) !!}
-                                            {!! Form::text('nome', '', ['class' => 'form-control', 'placeholder' => 'Motivo']) !!}
-                                            {!! Form::text('nome', '', ['class' => 'form-control', 'placeholder' => 'Homologado']) !!}
- 
+                                            
+                                            {!! Form::text('inscricao', '', ['class' => 'form-control', 'placeholder' => 'Informe sua inscrição']) !!}
                                         </div>
-                                    </div>
-                                    
-                                    <div class="form-group row">
+                                      </div>
+
+                                        <div class="form-group row">
+                                        {!! Form::label('motivo', 'Motivo:', ['class' => 'col-md-2 col-form-label']) !!}
+                                        
+                                        <div class="col-md-10">
+                                            
+                                        {!! Form::text('motivo', '', ['class' => 'form-control', 'placeholder' => 'Informe seu motivo']) !!}
+                                        </div>
+                                      </div>
+
+                                        <div class="form-group row">
+                                        {!! Form::label('cep', 'Homologado:', ['class' => 'col-md-2 col-form-label']) !!}
+                                        
+                                        <div class="col-md-10">
+                                            
+                                            {!! Form::text('cep', '', ['class' => 'form-control', 'placeholder' => 'Digite seu cep']) !!}
+                                        </div>
+                                      </div>
+
+                                   
+                                        <div class="form-group row">
                                         <div class="col-sm-12">
                                             
                                             {!! Form::submit('Salvar', ['class' => 'pull-right btn btn-success btn-submit']) !!}    

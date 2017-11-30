@@ -37,7 +37,13 @@ class InscriptionController extends Controller
     {
 
         $inscriptions = new Inscription;
-        $inscription->nome = $request->input('nome');
+        $inscription->processo_seletivo_id = $request->input('processo_seletivo_id');
+        $inscription->data_pagamento = $request->input('data_pagamento');
+        $inscription->pago = $request->input('pago');
+        $inscription->primeira_opcao = $request->input('primeira_opcao');
+        $inscription->data_inscricao = $request->input('data_inscricao');
+        $inscription->cotas_id = $request->input('cotas_id');
+
 
         if($inscription->save()) {
           return redirect()->route('inscriptions.index')->with('success_message', 'Inscrição cadastrado com sucesso.');

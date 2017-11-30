@@ -17,7 +17,9 @@
                                     <div class="form-group row">
                                         {!! Form::label('nome', 'Nome', ['class' => 'col-md-2 col-form-label']) !!}
                                         <div class="col-md-10">
-                                            {!! Form::text('nome', '', ['class' => 'form-control', 'placeholder' => 'Nome do Perfil']) !!}
+                                            {!! Form::text('nome', '', ['class' => 'form-control', 'placeholder' => 'Processo seletivo']) !!}
+                                            {!! Form::text('nome', '', ['class' => 'form-control', 'placeholder' => 'Cursos']) !!}
+                                            {!! Form::text('nome', '', ['class' => 'form-control', 'placeholder' => 'Vagas']) !!}
                                         </div>
                                     </div>
                                     

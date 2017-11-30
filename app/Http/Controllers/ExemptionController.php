@@ -37,9 +37,12 @@ class ExemptionController extends Controller
     {
 
         $exemption = new Exemption;
-        $exemption->nome = $request->input('nome');
+        $exemption->inscricao_id = $request->input('inscricao_id');
+        $exemption->motivo = $request->input('motivo');
+        $exemption->homologado = $request->input('homologado');
 
-        if($exemption->save()) {
+
+          if($exemption->save()) {
           return redirect()->route('exemptions.index')->with('success_message', 'Isenção cadastrado com sucesso.');
         } else {
           return redirect()->route('exemptions.create')->with('error_message', 'Houve um erro ao cadastradar a isenção.');

@@ -37,7 +37,10 @@ class PersonWithSpecialNeedController extends Controller
     {
 
         $personWithSpecialNeed = new PersonWithSpecialNeed;
-        $personWithSpecialNeed->nome = $request->input('nome');
+        $personWithSpecialNeed->necessidadeEspeciais_id = $request->input('necessidadeEspeciais_id');
+        $personWithSpecialNeed->permanente = $request->input('permanente');
+        $personWithSpecialNeed->observacao = $request->input('observacao');
+        
 
         if($personWithSpecialNeed->save()) {
           return redirect()->route('personWithSpecialNeed.index')->with('success_message', 'Pessoa com necessidade especiais cadastrado com sucesso.');

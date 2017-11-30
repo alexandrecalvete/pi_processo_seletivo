@@ -37,7 +37,16 @@ class AddressController extends Controller
     {
 
         $address = new Address;
-        $address->nome = $request->input('nome');
+        $address->rua = $request->input('rua');
+        $address->numero_endereco = $request->input('numero_endereco');
+        $address->cep = $request->input('cep');
+        $address->bairro = $request->input('bairro');
+        $address->complemento = $request->input('complemento');
+        $address->tipo = $request->input('tipo');
+        $address->cidade = $request->input('cidade');
+        $address->estado = $request->input('estado');
+        $address->pais = $request->input('pais');
+       
 
         if($address->save()) {
           return redirect()->route('addresses.index')->with('success_message', 'Endereço cadastrado com sucesso.');

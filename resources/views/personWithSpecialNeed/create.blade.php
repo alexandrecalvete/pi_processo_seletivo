@@ -17,7 +17,9 @@
                                     <div class="form-group row">
                                         {!! Form::label('nome', 'Nome', ['class' => 'col-md-2 col-form-label']) !!}
                                         <div class="col-md-10">
-                                          {!! Form::text('nome', '', ['class' => 'form-control', 'placeholder' => 'Nome da Pessoa com Necessidade Especiais']) !!}
+                                          {!! Form::text('nome', '', ['class' => 'form-control', 'placeholder' => 'Necessidade Especiais']) !!}
+                                          {!! Form::text('nome', '', ['class' => 'form-control', 'placeholder' => 'Permanente']) !!}
+                                          {!! Form::text('nome', '', ['class' => 'form-control', 'placeholder' => 'Observação']) !!}
                                         </div>
                                     </div>
                                     

@@ -39,11 +39,24 @@ class ProfileController extends Controller
 
         $profile = new Profile;
         $profile->nome = $request->input('nome');
+        $profile->data_nascimento = $request->input('data_nascimento');
+        $profile->rg = $request->input('rg');
+        $profile->cpf = $request->input('cpf');
+        $profile->sexo = $request->input('sexo');
+        $profile->nomePai = $request->input('nomePai');
+        $profile->nomeMae = $request->input('nomeMae');
+        $profile->passaporte = $request->input('passaporte');
+        $profile->telefone = $request->input('telefone');
+        $profile->celular = $request->input('celular');
+        $profile->naturalidade = $request->input('naturalidade');
+        $profile->escolaridade = $request->input('escolaridade');
+        $profile->emissor_rg = $request->input('emissor_rg');
+
 
         if($profile->save()) {
-          return redirect()->route('profiles.index')->with('success_message', 'Perfil cadastrado com sucesso.');
+          return redirect()->route('profile.index')->with('success_message', 'Perfil cadastrado com sucesso.');
         } else {
-          return redirect()->route('profiles.create')->with('error_message', 'Houve um erro ao cadastradar o perfil.');
+          return redirect()->route('profile.create')->with('error_message', 'Houve um erro ao cadastradar o perfil.');
         }
    }
 
