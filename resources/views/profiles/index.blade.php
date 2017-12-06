@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Processo Seletivo</div>
+                <div class="panel-heading">Perfil</div>
 
                 <div class="panel-body">
                     @if (session('status'))
@@ -14,31 +14,52 @@
                         </div>
                     @endif
 
-                    <h2>Esta é a página do perfil da pessoa.</h2>
-                    
-                    @foreach($profiles as $profile)
-                    
+                      <div class="panel panel-default">
+                         <div class="">
+                            <table class="table">
+                                <tr>
+                                    <th>Nome</th>
+                                    <th>Data Nascimento</th>
+                                    <th>Rg</th>
+                                    <th>Cpf</th>
+                                    <th>Sexo</th>
+                                    <th>Nome do Pai</th>
+                                    <th>Nome da Mãe</th>
+                                    <th>Passaporte</th>
+                                    <th>Naturalidade</th>
+                                    <th>Telefone</th>
+                                    <th>Celular</th>
+                                    <th>Escolaridade</th>
+                                    <th>Emissor do Rg</th>
+                                   </tr>
+
+                                @foreach($profiles as $profile)
+
+                                   <tr>
+                                    
+                                    <td>{{ $profile->nome }}</td>
+                                    <td>{{ $profile->data_nascimento }}</td>
+                                    <td>{{ $profile->rg }}</td>
+                                    <td>{{ $profile->cpf }}</td>
+                                    <td>{{ $profile->sexo }}</td>
+                                    <td>{{ $profile->nomePai }}</td>
+                                    <td>{{ $profile->nomeMae }}</td>
+                                    <td>{{ $profile->passaporte }}</td>
+                                    <td>{{ $profile->naturalidade }}</td>
+                                    <td>{{ $profile->telefone }}</td>
+                                    <td>{{ $profile->celular }}</td>
+                                    <td>{{ $profile->escolaridade }}</td>
+                                    <td>{{ $profile->emissor_rg }}</td>  
+                                </tr>
+
+                                @endforeach
+
+                            </table>
+                      </div>
+                    </div>
+
+
                         
-
-                    <tr>
-                        <td class="col-sm-2"{{ $profile->nome }}</td>
-                        <td class="col-sm-2"{{ $profile->data_nascimento }}</td>
-                        <td class="col-sm-2"{{ $profile->rg }}</td>
-                        <td class="col-sm-2"{{ $profile->cpf }}</td>
-                        <td class="col-sm-2"{{ $profile->sexo }}</td>
-                        <td class="col-sm-2"{{ $profile->nomePai }}</td>
-                        <td class="col-sm-2"{{ $profile->nomeMae }}</td>
-                        <td class="col-sm-2"{{ $profile->passaporte }}</td>
-                        <td class="col-sm-2"{{ $profile->telefone }}</td>
-                        <td class="col-sm-2"{{ $profile->celular }}</td>
-                        <td class="col-sm-2"{{ $profile->naturalidade }}</td>
-                        <td class="col-sm-2"{{ $profile->escolaridade }}</td>
-                        <td class="col-sm-2"{{ $profile->emissor_rg }}</td>
-                        <td class="col-md-1">
-                        </tr>
-                       
-
-                    @endforeach
                       
                 </div>
             </div>
